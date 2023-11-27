@@ -40,8 +40,8 @@ function setupWSServer(server) {
       actorCoordinates[incommingMessage.id] = {
         x: incommingMessage.x,
         y: incommingMessage.y,
-        frame: incommingMessage.frame,
-      };
+        frame: incommingMessage.frame
+      }
       wss.clients.forEach((wsClient) => {
         wsClient.send(JSON.stringify(actorCoordinates));
       })

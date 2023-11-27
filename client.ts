@@ -38,6 +38,7 @@ function uuid(
 class GameScene extends Phaser.Scene {
   private HOST = window.location.hostname; // localhost and 127.0.0.1 handled
   private PORT = 8080; // change this if needed
+
   private VELOCITY = 100;
   private wsClient?: WebSocket;
   private leftKey?: Phaser.Input.Keyboard.Key;
@@ -198,7 +199,6 @@ class GameScene extends Phaser.Scene {
       player.update();
     }
   }
-  
 }
 
 
@@ -214,7 +214,7 @@ const config: GameConfig = {
     arcade: { debug: DEBUG }
   },
   render: { pixelArt: true, antialias: false }
-};
+}
 
 class LabDemoGame extends Phaser.Game {
   constructor(config: GameConfig) {
@@ -224,4 +224,4 @@ class LabDemoGame extends Phaser.Game {
 
 window.addEventListener("load", () => {
   new LabDemoGame(config);
-})
+});
